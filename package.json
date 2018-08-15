@@ -1,0 +1,23 @@
+{
+  "name": "PierreClark",
+  "version": "1.0.0",
+  "description": "32 year man old learning and journeying through life",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KingMarquis/SavvyPortfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KingMarquis/SavvyPortfolio/issues"
+  },
+  "homepage": "https://github.com/KingMarquis/SavvyPortfolio#readme",
+  "devDependencies": {
+    "eslint": "^5.3.0"
+  }
+}
