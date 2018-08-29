@@ -5,33 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Pierre"s Portfolio Project</title>
+    <link rel="stylesheet" href="css/style.css">
+    
 </head>
-<body>
-    <div style="Color:red">
-    <h1 style=" background:navajowhite">Pierre Clark</h1>
-    <h2 style="color:chartreuse">32 year old man learning and journeying through life</h2>
-    <h3 style="font-weight: 200">Hire me</h3>
-<ul>
-    <li>
-    <a style="color:indigo" href="https://linkedin.com"> Linkedin page</a>
-    </li>
-    <li>
-        <a href="https://twitter.com">twitter page</a>
-    </li>
-    <li>
-        <a href="mailto:pmclark@gmail.com">My email</a>
-    </li>
-</ul>
-    <div>
-<ol>
-    <li style="color:green">Luigi</li>
-    <li style="color:gold">Link</li>
-    <li style="color:navy">Sonic</li>
-</ol>
+<body> 
+
+    <div id ="navigation">
+        <ul>
+                <li>
+                    <a href="https://linkedin.com"> Linkedin page</a>
+                </li>
+                <li>
+                    <a href="https://twitter.com">twitter page</a>
+                </li>
+                <li>
+                    <a href="mailto:pmclark@gmail.com">My email</a>
+                </li>
+                <li>
+                    <a href="blog/index.html">blog</a>
+                </li>
+                <li>
+                    <a className="dropdown" href="projects">projects   
+                        <ul>
+                            <li>first</li>
+                            <li>second</li>
+                            <li>third</li>
+                        </ul>
+                    </a> 
+                </li>  
+                <li>Resume</li>
+                        
+        </ul>
+    </div>    
+    <div class="container">
+        <h1>Pierre Clark</h1>
+        <h2>32 year old man learning and journeying through life</h2>
+        <h3 class="emphasized">Hire me</h3>
+    </div>
+    <hr>
+
+<div> 
 <div style="background:navajowhite">
 <img src="https://scontent-ort2-1.xx.fbcdn.net/v/t1.0-0/p206x206/383101_568131997512_1880921844_n.jpg?_nc_cat=0&oh=7b51d4c10f7827a00584186f200c8840&oe=5C04C0F0" alt="A picture of me">
 </div>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis ipsam, nisi, vitae recusandae neque fugiat blanditiis quia est ut odio minus nobis labore iure sint numquam earum voluptate. Quae, quisquam?</p>
-    
+<div id = "greeting"></div>
+    <div class="content">
+        <p class="emphasized">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis ipsam, nisi, vitae recusandae neque fugiat blanditiis quia est ut odio minus nobis labore iure sint numquam earum voluptate. Quae, quisquam?</p>
+        <p class="emphasized">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus ducimus obcaecati, temporibus ut culpa ratione repellendus. Sapiente repellendus odit nostrum. At tempora, iure ducimus magni consectetur vitae eum expedita deleniti.
+    </div>
+    <script src="js/greetings.js"></script>
 </body>
 </html>
