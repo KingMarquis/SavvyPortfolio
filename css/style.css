@@ -6,83 +6,43 @@ body {
         "header"
         "content"
         "footer"   ;
-    grid-template-rows: min-content min-content auto min-content
-}
-h1 {
-    color:red;
-}
-h2 { 
-    color: chartreuse;
+    grid-template-rows: min-content min-content auto min-content;
 }
 
-h3 { font-weight: 200;
- }
-.emphasized {color: purple;
-font-style: oblique;
-        }
-#content  > .emphasized {
-    background-color: blue
-    color: violet;
-    font-style: italic;
-    font-weight: 800;
-} 
-.container { 
-    text-align:center;
-    margin: 0 auto;
-    max-width:  500px;
-    width: 100%;
-}
-#navigation {
+#navigation{
+    border: 0.5px;
+    border-style: solid;
+    border-color:orange;
     background-color: orangered;
     padding: 5px;
     position: sticky;
-    width: 100%;
-}
-img{
-    display: block;
-    margin: 20px auto;
-    max-width: 300px;
-    width: 100%
- }
-#navigation li:first-child {
-    background-color:wheat;
-    }
-#links {
-    background-color: yellow;
+    grid-area: navigation;    
 }
 
-#navigation > ul > li {
+#navigation > ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#navigation > ul > li{
     display: inline;
     position: relative;
+    list-style: none;
 }
 
-#links ul {
-    
-}
-.dropdown  {
-    left: 0px;
-    list-style-type: none;
-    padding: 0px;
-    position: relative;
-    min-width: 160px;
-    background-color: #ddd;
-    border: 1px black solid;
-}
-.dropdown ul{
-    background-color: steelblue;
+#navigation a + ul {
+    left: 0;
     position: absolute;
-    display: none;
+    display: hidden;
+    list-style: none;
+    padding: 10px;
+    background-color: grey;
+    width: 80px;
 }
-.dropdown:hover + ul {
+
+#navigation a + ul:hover,
+#navigation a:hover + ul {
     display: flex;
     flex-direction: column;
-    }
-
-Form {background-color: turquoise;
-     align-items: flex-start;
-     display: flex;
-     flex-direction: column;
-        }
-input {
-    font-family: 'work sans';
- }
+}
