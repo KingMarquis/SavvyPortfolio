@@ -1,33 +1,31 @@
-export default function Navigation(){
+function Link(link){
+    var href = '';
+
+    if(link !== 'home'){
+        href = link;
+    }
+    
     return `
-<div id="navigation">
-    <ul>
         <li>
-            <a href="https://linkedin.com"> Linkedin page</a>
-        </li>
+            <a href="/${href}" data-navigo>${link}</a>
         <li>
-            <a href="https://twitter.com">twitter page</a>
-        </li>
-        <li>
-            <a href="mailto:pmclark@gmail.com">My email</a>
-        </li>
-        <li>
-            <a href="blog/index.html">blog</a>
-        </li>
-        <li>
-            <a href="projects">projects   
-            </a> 
-            <ul>
-                <li>first</li>
-                <li>second</li>
-                <li>third</li>
-            </ul>
-        </li>  
-        <li>
-            <a href= "Resume">Resume</a>
-        </li>
-        
-    </ul>
-</div> 
+    `;
+}
+
+export default function Navigation(state){
+    var links = state
+        .links
+        .map(Link)
+        .join('');
+    
+
+    state.links.forEach((link) => links += Link(link));
+       
+    return `
+    <div id="navigation">
+        <ul class="container">
+            ${links}
+        </ul>
+    </div>
 `;
 }

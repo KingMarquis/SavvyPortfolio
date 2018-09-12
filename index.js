@@ -1,52 +1,35 @@
+import Navigo from 'navigo';
 import Navigation from './components/Navigation';
 import Header from './components/Header';
 import Content from './components/Content';
-
-var State = {
-    'active': 'home',
-    'home': {
-        'title': '32 year old man learning and journeying through life'
-    },
-    'blog': {
-        'title': 'I like to talk and stuff'
-    },
-    'projects': {
-        'title': 'these are my projects I worked on'
-    },
-    'resume': {
-        'title': 'My Resume'
-    },
-};
+import * as State from './store';
 
 var root = document.querySelector('#root');
+var router = new Navigo(window.location.origin);
 
-function handleNavigation(event){
-    var newState = State;
 
-    newState.active = event.target.textContent;
+function render(state){
+    root.innerHTML = `
+            ${Navigation(state[state.active])}
+            ${Header(state[state.active])}
+            ${Content(state[state.active])}`;
 
-    event.preventDefault();
+
+    router.updatePageLinks();
+}
+
+function handleNavigation(activePage){
+    var newState = Object.assign({}, State);
+ 
+    newState.active = activePage;
 
     render(newState);
 }
 
-function render(state){
-    var links;
-
-    root.innerHTML = `
-            ${Navigation()}
-            ${Header(state[state.active])}
-            ${Content()}`;
-
-
-    links = document.querySelectorAll('#navigation a');
-
-    for(let i = 0; i < links.lenght; i++){
-        links[i].addEventListener(
-            'click',
-            handleNavigation
-        );
-    }
-}
    
 render(State);
+
+router
+    .on('/:page',(params) => handleNavigation(params.page))
+    .on('/',() => handleNavigation('home'))
+    .resolve();

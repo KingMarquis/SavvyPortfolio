@@ -19,5 +19,8 @@
   "homepage": "https://github.com/KingMarquis/SavvyPortfolio#readme",
   "devDependencies": {
     "eslint": "^5.3.0"
+  },
+  "dependencies": {
+    "navigo": "^7.1.2"
   }
 }
